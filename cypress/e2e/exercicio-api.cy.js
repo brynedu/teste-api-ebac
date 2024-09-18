@@ -1,9 +1,6 @@
 /// <reference types="cypress" />
 import contracts from '../contracts/user.contracts'
 import { faker } from '@faker-js/faker'
-var nome = faker.internet.userName()
-var email = faker.internet.email()
-var senha = faker.internet.password()
 
 describe('Testes da Funcionalidade Usuários', () => {
 
@@ -33,7 +30,10 @@ describe('Testes da Funcionalidade Usuários', () => {
   });
 
   ///POST
-  it('Deve cadastrar um usuário com sucesso', () => {    
+  it('Deve cadastrar um usuário com sucesso', () => {
+    var nome = faker.internet.userName()
+    var email = faker.internet.email()
+    var senha = faker.internet.password()    
     cy.registerUser(token, nome, email, senha, 'true')  
     .should((response) => {
         expect(response.status).equal(201)
@@ -43,6 +43,8 @@ describe('Testes da Funcionalidade Usuários', () => {
 
   ///POST
   it('Deve validar um usuário com email inválido', () => { 
+    var nome = faker.internet.userName()
+    var senha = faker.internet.password() 
     cy.registerUser(token, nome, 'fulano@qa.com', senha, 'false')
     .should((response) => {
         expect(response.status).equal(400)
