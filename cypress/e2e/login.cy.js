@@ -16,5 +16,4 @@ describe('Login', () => {
             cy.log(response.body.authorization)
         })
     });
-
 });

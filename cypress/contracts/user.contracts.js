@@ -10,4 +10,5 @@ const userSchema = Joi.object({
         _id: Joi.string()
     })
 })
+
 export default userSchema;

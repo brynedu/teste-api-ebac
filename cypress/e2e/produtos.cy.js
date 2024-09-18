@@ -24,6 +24,7 @@ describe('Testes da Funcionalidade Produtos', () => {
             expect(response.duration).to.be.lessThan(20)
         })
     });
+    
 
     it('Deve cadastrar um produto com sucesso', () => {
         let produto = `Produto EBAC ${Math.floor(Math.random() * 100000000)}`

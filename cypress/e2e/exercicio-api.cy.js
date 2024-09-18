@@ -21,7 +21,7 @@ describe('Testes da Funcionalidade Usuários', () => {
   })
   });
 
-  //GET
+  ///GET
   it('Deve listar usuários cadastrados', () => {    
     cy.request({
       method: 'GET',
@@ -32,7 +32,7 @@ describe('Testes da Funcionalidade Usuários', () => {
   })    
   });
 
-  //POST
+  ///POST
   it('Deve cadastrar um usuário com sucesso', () => {    
     cy.registerUser(token, nome, email, senha, 'true')  
     .should((response) => {
@@ -41,7 +41,7 @@ describe('Testes da Funcionalidade Usuários', () => {
     })
   });
 
-  //POST
+  ///POST
   it('Deve validar um usuário com email inválido', () => { 
     cy.registerUser(token, nome, 'fulano@qa.com', senha, 'false')
     .should((response) => {
@@ -51,7 +51,7 @@ describe('Testes da Funcionalidade Usuários', () => {
     })
   });
 
-  //PUT
+  ///PUT
   it('Deve editar um usuário previamente cadastrado', () => {
     var email = faker.internet.email()
     var senha = faker.internet.password()
@@ -74,7 +74,7 @@ describe('Testes da Funcionalidade Usuários', () => {
   })
   });
 
-  //DELETE
+  ///DELETE
   it('Deve deletar um usuário previamente cadastrado', () => {
     var email = faker.internet.email()
     var senha = faker.internet.password()
