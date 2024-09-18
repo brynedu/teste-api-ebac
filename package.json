@@ -12,7 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cypress": "^13.6.0",
+    "cypress": "^13.14.2",
+    "faker": "^6.6.6",
     "joi": "^17.12.0"
   }
 }
